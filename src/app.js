@@ -31,6 +31,9 @@ app.use(
 
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/report', reportRoutes);
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'UP', timestamp: new Date().toISOString() });
+})
 
 app.use(errorMiddleware);
 
