@@ -1,0 +1,26 @@
+{
+  "name": "transaction-history",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Laxmidhar",
+  "license": "ISC",
+  "description": "This task is given by AtomX",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "joi": "^17.13.3",
+    "mongoose": "^8.9.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9"
+  }
+}
