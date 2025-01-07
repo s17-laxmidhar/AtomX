@@ -13,7 +13,7 @@ exports.downloadReport = async (req, res) => {
     }
     if (type) query.type = type;
 
-    const transactions = await Transaction.find(query);
+    const transactions = await Transaction.find(query).sort({ timestamp: -1 });
 
     const workbook = generateExcelReport(transactions);
 

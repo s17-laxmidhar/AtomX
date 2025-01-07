@@ -13,6 +13,7 @@ exports.getTransactions = async (req, res) => {
         if (type) query.type = type;
 
         const transactionsAndDocumentsCount = await Promise.all([Transaction.find(query)
+            .sort({ timestamp: -1 })
             .skip((page - 1) * limit)
             .limit(Number(limit)), Transaction.countDocuments(query)]);
         const [transactions, total] = transactionsAndDocumentsCount;

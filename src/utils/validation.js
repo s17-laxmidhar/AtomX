@@ -21,3 +21,13 @@ exports.transactionSchema = Joi.object({
     status: Joi.string().valid('pending', 'completed', 'failed').required(),
     mobile: Joi.string().pattern(/^\d{10}$/).required(),
 });
+
+exports.signupValidation = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(6).required(),
+});
+
+exports.loginValidation = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().required(),
+});

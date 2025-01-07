@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('express-async-errors');
 
+const authRoutes = require('./routes/auth.routes');
 const transactionRoutes = require('./routes/transaction.routes');
 const reportRoutes = require('./routes/report.routes');
 const errorMiddleware = require('./middlewares/error.middleware');
@@ -29,6 +30,7 @@ app.use(
   })
 );
 
+app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/report', reportRoutes);
 app.get('/health', (req, res) => {
